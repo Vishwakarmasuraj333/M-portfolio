@@ -40,7 +40,7 @@ const defaultProjects: Project[] = [
     title: "Bootstrap Landing Page",
     description: "A fast, fully optimized lead generation landing page built on Bootstrap v5 grids with clean layouts and basic SEO setup.",
     category: "Frontend",
-    image: "https://images.unsplash.com/photo-1541462608141-2ffb68ae686e?w=800&auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&auto=format&fit=crop&q=80",
     liveUrl: "https://github.com",
     githubUrl: "https://github.com",
     techStack: ["HTML5", "CSS3", "Bootstrap", "JavaScript", "SEO Basics"],
@@ -89,8 +89,9 @@ export default function Projects() {
     return project.category === selectedCategory;
   });
 
-  // Zero-dependency 3D Tilt Card physics
+  // Zero-dependency 3D Tilt Card physics (disabled on mobile for smooth scrolling)
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (typeof window !== "undefined" && window.innerWidth < 768) return;
     const card = e.currentTarget;
     const box = card.getBoundingClientRect();
     const x = e.clientX - box.left - box.width / 2;
@@ -106,6 +107,10 @@ export default function Projects() {
   const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
     const card = e.currentTarget;
     card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg)";
+  };
+
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    e.currentTarget.src = "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&auto=format&fit=crop&q=80";
   };
 
   return (
@@ -170,9 +175,10 @@ export default function Projects() {
                 <motion.div
                   key={project._id}
                   layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  exit={{ opacity: 0, y: 30 }}
                   transition={{ duration: 0.4 }}
                   className="h-full"
                 >
@@ -190,6 +196,7 @@ export default function Projects() {
                       <img
                         src={project.image}
                         alt={project.title}
+                        onError={handleImageError}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
                         loading="lazy"
                       />

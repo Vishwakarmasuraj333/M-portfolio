@@ -71,8 +71,9 @@ export default function PhpMySqlProjects() {
       .finally(() => setLoading(false));
   }, []);
 
-  // 3D Tilt Card physics
+  // 3D Tilt Card physics (disabled on mobile for smooth scrolling)
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (typeof window !== "undefined" && window.innerWidth < 768) return;
     const card = e.currentTarget;
     const box = card.getBoundingClientRect();
     const x = e.clientX - box.left - box.width / 2;
@@ -85,6 +86,10 @@ export default function PhpMySqlProjects() {
   const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
     const card = e.currentTarget;
     card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg)";
+  };
+
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    e.currentTarget.src = "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop&q=80";
   };
 
   return (
@@ -132,9 +137,9 @@ export default function PhpMySqlProjects() {
                 <motion.div
                   key={project._id}
                   layout
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4 }}
                   className="h-full"
                 >
@@ -151,6 +156,7 @@ export default function PhpMySqlProjects() {
                       <img
                         src={project.image}
                         alt={project.title}
+                        onError={handleImageError}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
                         loading="lazy"
                       />

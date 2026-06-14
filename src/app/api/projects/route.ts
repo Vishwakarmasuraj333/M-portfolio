@@ -49,7 +49,7 @@ const defaultProjects = [
     title: "Bootstrap Landing Page",
     description: "A fast, fully optimized lead generation landing page built on Bootstrap v5 grids with clean layouts and basic SEO setup.",
     category: "Frontend",
-    image: "https://images.unsplash.com/photo-1541462608141-2ffb68ae686e?w=800&auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&auto=format&fit=crop&q=80",
     liveUrl: "https://github.com",
     githubUrl: "https://github.com",
     techStack: ["HTML5", "CSS3", "Bootstrap", "JavaScript", "SEO Basics"],
