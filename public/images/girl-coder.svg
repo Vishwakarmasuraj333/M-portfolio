@@ -1,0 +1,214 @@
+<svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="hairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#120534" />
+      <stop offset="60%" stop-color="#2a085c" />
+      <stop offset="100%" stop-color="#b84dff" />
+    </linearGradient>
+    <linearGradient id="hairHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff4db8" />
+      <stop offset="100%" stop-color="#b84dff" />
+    </linearGradient>
+    <linearGradient id="skin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd4cc" />
+      <stop offset="40%" stop-color="#ffbfb2" />
+      <stop offset="100%" stop-color="#e08a8a" />
+    </linearGradient>
+    <linearGradient id="skinShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffbfb2" />
+      <stop offset="100%" stop-color="#c56d78" />
+    </linearGradient>
+    <linearGradient id="jacket" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#190e38" />
+      <stop offset="50%" stop-color="#2c1654" />
+      <stop offset="100%" stop-color="#0b1020" />
+    </linearGradient>
+    <linearGradient id="neonGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff4db8" />
+      <stop offset="50%" stop-color="#ff80df" />
+      <stop offset="100%" stop-color="#b84dff" />
+    </linearGradient>
+    <linearGradient id="hologram" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#b84dff" stop-opacity="0.05" />
+    </linearGradient>
+    
+    <!-- Glow Filters -->
+    <filter id="neon-glow-pink" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="neon-glow-purple" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="neon-glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background holographic code grids/particles -->
+  <g opacity="0.3">
+    <circle cx="250" cy="250" r="230" stroke="url(#neonGlow)" stroke-width="1" stroke-dasharray="4 8" />
+    <circle cx="250" cy="250" r="180" stroke="#b84dff" stroke-width="0.5" stroke-opacity="0.5" />
+  </g>
+
+  <!-- Futuristic workspace background circles/nodes -->
+  <g opacity="0.8">
+    <path d="M 80 150 L 120 150 L 140 170" stroke="#00f3ff" stroke-width="1.5" stroke-linecap="round" fill="none" filter="url(#neon-glow-cyan)" />
+    <circle cx="80" cy="150" r="3.5" fill="#00f3ff" filter="url(#neon-glow-cyan)" />
+    <text x="65" y="132" fill="#00f3ff" font-family="monospace" font-size="13" font-weight="bold" letter-spacing="1" filter="url(#neon-glow-cyan)">&lt;dev&gt;</text>
+    
+    <path d="M 420 180 L 380 180 L 360 200" stroke="#00f3ff" stroke-width="1.5" stroke-linecap="round" fill="none" filter="url(#neon-glow-cyan)" />
+    <circle cx="420" cy="180" r="3.5" fill="#00f3ff" filter="url(#neon-glow-cyan)" />
+    <text x="365" y="162" fill="#00f3ff" font-family="monospace" font-size="13" font-weight="bold" letter-spacing="1" filter="url(#neon-glow-cyan)">{code}</text>
+  </g>
+
+  <!-- Back Hair -->
+  <path d="M 170 260 C 170 140, 330 140, 330 260 C 330 350, 310 400, 310 420 C 310 420, 290 410, 250 410 C 210 410, 190 420, 190 420 C 190 400, 170 350, 170 260 Z" fill="url(#hairGrad)" />
+
+  <!-- Body (Shoulders and Jacket) -->
+  <path d="M 130 460 C 130 400, 170 330, 210 320 L 290 320 C 330 330, 370 400, 370 460 L 350 490 L 150 490 Z" fill="url(#jacket)" stroke="#b84dff" stroke-width="1" />
+  
+  <!-- Neon trims on jacket -->
+  <path d="M 170 460 C 170 410, 200 350, 225 345" stroke="#ff4db8" stroke-width="2" fill="none" filter="url(#neon-glow-pink)" />
+  <path d="M 330 460 C 330 410, 300 350, 275 345" stroke="#b84dff" stroke-width="2" fill="none" filter="url(#neon-glow-purple)" />
+
+  <!-- Neck -->
+  <path d="M 230 325 L 230 270 C 230 270, 245 285, 250 285 C 255 285, 270 270, 270 270 L 270 325 Z" fill="url(#skinShadow)" />
+
+  <!-- Face -->
+  <path d="M 200 240 C 200 190, 300 190, 300 240 C 300 285, 280 305, 250 305 C 220 305, 200 285, 200 240 Z" fill="url(#skin)" />
+
+  <!-- Head highlight overlay from screen -->
+  <path d="M 200 240 C 200 285, 280 305, 250 305 C 240 305, 230 295, 210 270 C 200 250, 200 240, 200 240 Z" fill="#00f3ff" opacity="0.12" />
+
+  <!-- Eyes & Eyebrows -->
+  <path d="M 225 240 C 230 238, 237 238, 242 242" stroke="#120534" stroke-width="2.5" stroke-linecap="round" fill="none" />
+  <path d="M 275 240 C 270 238, 263 238, 258 242" stroke="#120534" stroke-width="2.5" stroke-linecap="round" fill="none" />
+  
+  <path d="M 220 232 C 228 228, 238 230, 242 235" stroke="#2a085c" stroke-width="2" stroke-linecap="round" fill="none" />
+  <path d="M 280 232 C 272 228, 262 230, 258 235" stroke="#2a085c" stroke-width="2" stroke-linecap="round" fill="none" />
+
+  <!-- Nose & Mouth -->
+  <path d="M 250 250 L 250 262 L 253 264" stroke="#c56d78" stroke-width="2" stroke-linecap="round" fill="none" />
+  <path d="M 240 278 C 244 282, 256 282, 260 278" stroke="#c56d78" stroke-width="2.5" stroke-linecap="round" fill="none" />
+
+  <!-- Front Hair/Bangs -->
+  <path d="M 200 215 C 215 175, 285 175, 300 215 C 310 215, 305 185, 250 180 C 195 185, 190 215, 200 215 Z" fill="url(#hairGrad)" />
+  <path d="M 195 230 C 185 270, 195 320, 195 320 C 195 320, 205 270, 205 240 Z" fill="url(#hairGrad)" />
+  <path d="M 305 230 C 315 270, 305 320, 305 320 C 305 320, 295 270, 295 240 Z" fill="url(#hairGrad)" />
+  
+  <!-- Hair Neon Highlights -->
+  <path d="M 205 190 C 235 175, 265 175, 295 190" stroke="url(#hairHighlight)" stroke-width="3" stroke-linecap="round" fill="none" filter="url(#neon-glow-pink)" />
+  <path d="M 185 250 C 180 280, 190 310, 190 310" stroke="url(#hairHighlight)" stroke-width="2" stroke-linecap="round" fill="none" filter="url(#neon-glow-purple)" />
+  <path d="M 315 250 C 320 280, 310 310, 310 310" stroke="url(#hairHighlight)" stroke-width="2" stroke-linecap="round" fill="none" filter="url(#neon-glow-purple)" />
+
+  <!-- Cyber Glasses -->
+  <circle cx="232" cy="245" r="15" stroke="#ff4db8" stroke-width="2.5" fill="rgba(255, 77, 184, 0.1)" filter="url(#neon-glow-pink)" />
+  <circle cx="268" cy="245" r="15" stroke="#ff4db8" stroke-width="2.5" fill="rgba(255, 77, 184, 0.1)" filter="url(#neon-glow-pink)" />
+  <path d="M 247 245 L 253 245" stroke="#ff4db8" stroke-width="2.5" filter="url(#neon-glow-pink)" />
+  <path d="M 217 245 L 210 248" stroke="#ff4db8" stroke-width="1.5" />
+  <path d="M 283 245 L 290 248" stroke="#ff4db8" stroke-width="1.5" />
+
+  <!-- Laptop Base -->
+  <path d="M 140 450 L 360 450 L 380 480 L 120 480 Z" fill="#1b123a" stroke="#ff4db8" stroke-width="1.5" />
+  <!-- Keyboard area glow -->
+  <polygon points="155,455 345,455 360,475 140,475" fill="rgba(184, 77, 255, 0.25)" />
+  <!-- Keys (represented by glowing dash arrays) -->
+  <line x1="165" y1="460" x2="335" y2="460" stroke="#b84dff" stroke-width="2" stroke-dasharray="10 4 6 4 12 4 8" />
+  <line x1="160" y1="466" x2="340" y2="466" stroke="#ff80df" stroke-width="2" stroke-dasharray="6 3 15 3 8 3 6" />
+  <line x1="150" y1="472" x2="350" y2="472" stroke="#00f3ff" stroke-width="3.5" stroke-dasharray="20 5 40 5 20" filter="url(#neon-glow-cyan)" /> <!-- Spacebar row -->
+
+  <!-- Hands Typing -->
+  <!-- Left Hand -->
+  <path d="M 170 470 C 180 450, 195 435, 215 440 L 210 448 C 195 445, 185 455, 175 475 Z" fill="url(#skin)" />
+  <circle cx="215" cy="440" r="3" fill="url(#skin)" />
+  <!-- Right Hand -->
+  <path d="M 330 470 C 320 450, 305 435, 285 440 L 290 448 C 305 445, 315 455, 325 475 Z" fill="url(#skin)" />
+  <circle cx="285" cy="440" r="3" fill="url(#skin)" />
+
+  <!-- Holographic Screen (Transparent Glass overlay) -->
+  <rect x="150" y="300" width="200" height="130" rx="10" fill="url(#hologram)" stroke="#00f3ff" stroke-width="2" filter="url(#neon-glow-cyan)" />
+  <!-- Screen top title bar -->
+  <line x1="150" y1="315" x2="350" y2="315" stroke="#00f3ff" stroke-width="1" stroke-opacity="0.4" />
+  <circle cx="160" cy="308" r="2.5" fill="#ff4db8" />
+  <circle cx="168" cy="308" r="2.5" fill="#ff80df" />
+  <circle cx="176" cy="308" r="2.5" fill="#00f3ff" filter="url(#neon-glow-cyan)" />
+  <text x="310" y="310" fill="#ffffff" font-family="monospace" font-size="9" font-weight="bold">index.js</text>
+
+  <!-- Glowing Code lines on Holographic Screen -->
+  <!-- Line 1: import ... -->
+  <rect x="165" y="325" width="45" height="4" rx="2" fill="#00f3ff" filter="url(#neon-glow-cyan)" />
+  <rect x="215" y="325" width="30" height="4" rx="2" fill="#b84dff" />
+  <rect x="250" y="325" width="55" height="4" rx="2" fill="#ffffff" />
+  
+  <!-- Line 2: const Mamta = () => { -->
+  <rect x="165" y="335" width="30" height="4" rx="2" fill="#b84dff" />
+  <rect x="200" y="335" width="35" height="4" rx="2" fill="#ffffff" />
+  <rect x="240" y="335" width="10" height="4" rx="2" fill="#00f3ff" filter="url(#neon-glow-cyan)" />
+  <rect x="255" y="335" width="15" height="4" rx="2" fill="#ff4db8" />
+  
+  <!-- Line 3:   const [skills, setSkills] = useState([ -->
+  <rect x="175" y="345" width="25" height="4" rx="2" fill="#b84dff" />
+  <rect x="205" y="345" width="50" height="4" rx="2" fill="#ffffff" />
+  <rect x="260" y="345" width="35" height="4" rx="2" fill="#00f3ff" filter="url(#neon-glow-cyan)" />
+
+  <!-- Line 4:     "Next.js", "Tailwind", "React" -->
+  <rect x="185" y="355" width="40" height="4" rx="2" fill="#ffffff" opacity="0.95" />
+  <rect x="230" y="355" width="35" height="4" rx="2" fill="#00f3ff" opacity="0.95" filter="url(#neon-glow-cyan)" />
+  <rect x="270" y="355" width="30" height="4" rx="2" fill="#b84dff" opacity="0.95" />
+
+  <!-- Line 5:   ]); -->
+  <rect x="175" y="365" width="15" height="4" rx="2" fill="#b84dff" />
+
+  <!-- Line 6:   return ( -->
+  <rect x="175" y="375" width="35" height="4" rx="2" fill="#00f3ff" filter="url(#neon-glow-cyan)" />
+
+  <!-- Line 7:     <MamtaPortfolio love={true}> -->
+  <rect x="185" y="385" width="10" height="4" rx="2" fill="#00f3ff" filter="url(#neon-glow-cyan)" />
+  <rect x="200" y="385" width="65" height="4" rx="2" fill="#ffffff" />
+  <rect x="270" y="385" width="40" height="4" rx="2" fill="#b84dff" />
+
+  <!-- Line 8:       <CreativeWebsites glow="pink" /> -->
+  <rect x="195" y="395" width="80" height="4" rx="2" fill="#ffffff" />
+  <rect x="280" y="395" width="35" height="4" rx="2" fill="#ff4db8" />
+
+  <!-- Line 9:     </MamtaPortfolio> -->
+  <rect x="185" y="405" width="10" height="4" rx="2" fill="#00f3ff" filter="url(#neon-glow-cyan)" />
+  <rect x="200" y="405" width="65" height="4" rx="2" fill="#ffffff" />
+
+  <!-- Line 10:   ); -->
+  <rect x="175" y="415" width="10" height="4" rx="2" fill="#b84dff" />
+  
+  <!-- Line 11: }; -->
+  <rect x="165" y="423" width="10" height="4" rx="2" fill="#b84dff" />
+
+  <!-- Glowing UI Overlay Rings/Lines (floating) -->
+  <circle cx="150" cy="300" r="12" stroke="#00f3ff" stroke-width="1.5" fill="none" filter="url(#neon-glow-cyan)" opacity="0.9" />
+  <line x1="142" y1="300" x2="158" y2="300" stroke="#00f3ff" stroke-width="1.5" />
+  <line x1="150" y1="292" x2="150" y2="308" stroke="#00f3ff" stroke-width="1.5" />
+
+  <!-- Hexagon floating node -->
+  <polygon points="365,330 375,324 385,330 385,342 375,348 365,342" fill="none" stroke="#00f3ff" stroke-width="1.5" filter="url(#neon-glow-cyan)" opacity="0.9" />
+  <text x="371" y="340" fill="#ffffff" font-family="sans-serif" font-size="10" font-weight="bold">&lt;</text>
+
+  <!-- Glowing floating tech icons / nodes -->
+  <g filter="url(#neon-glow-cyan)" opacity="0.8">
+    <!-- Code bracket floating left -->
+    <path d="M 100 280 L 90 285 L 100 290" stroke="#00f3ff" stroke-width="2" fill="none" stroke-linecap="round" />
+    <path d="M 110 280 L 120 285 L 110 290" stroke="#00f3ff" stroke-width="2" fill="none" stroke-linecap="round" />
+    <line x1="107" y1="278" x2="103" y2="292" stroke="#00f3ff" stroke-width="2" />
+  </g>
+</svg>
